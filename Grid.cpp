@@ -18,8 +18,10 @@
 using namespace std;
 
 Grid::Grid() {
-    board [10][10] = NULL; 
-    
+  
+    //inialize board with 
+    board = fillGrid();
+
 }
 
 Grid::Grid(const Grid& orig) {
@@ -32,22 +34,45 @@ Grid::~Grid() {
 void Grid::displayGrid(){
     
         //Display initial grid
-    	cout <<"   \t   " << setw(2) << left    << 'A' << setw(2) << 'B' << setw(2) << 'C' << setw(2) << 'D' << setw(2) << 'E' << setw(2) << 'F' 
-             << setw(2)   << 'G'     << setw(2) << 'H' << setw(2) << 'I' << setw(2) << 'J' << endl;
-
+    	cout <<"   \t    " << setw(4) << left    << 'A' << setw(4) << 'B' << setw(4) << 'C' << setw(4) << 'D' << setw(4) << 'E' << setw(4) << 'F' 
+             << setw(4)   << 'G'     << setw(4) << 'H' << setw(4) << 'I' << setw(4) << 'J' << endl;
+        cout <<"   \t   " << "======================================\n";
         //Fill 2D Grid
 	for (int row = 0; row < 10; row++)
 	{
 		cout << "\t";
-		cout << setw(3) << left << row + 1;
+		cout << setw(1) << left << row + 1 << " | ";
 		for (int col = 0; col < 10; col++)
 		{
-			cout << setw(2) << left << board[row][col];
+			cout << setw(4) << left <<  *(board + row * 10 + col);
 		}
-		cout << endl;
+		cout << endl << endl;
 	}
 	cout << endl;
 }
 void Grid::setShips(){
+    
+}
+//Mutator Functions 
+char * Grid::fillGrid(){ //Fills the 2D initial grid  
+    
+    //Dimensions of 2D array
+    int  m = 10, n = 10, c = 0; 
+    
+    //Create a new 2D dynamic array 
+    char * arr = new char[ m * n ];
+    
+    //Fill 2D array(Grid)
+    for( int i = 0; i < m ; i++ ){
+        
+        for( int j = 0; j < n; j++ ){
+            
+            //Assign values to the array with * 
+            *(arr + i * n + j) = '*';
+        }
+    }
+  
+    //REMEMBER TO DELETE DYNAMIC Memory!!
+    return arr;
     
 }

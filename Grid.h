@@ -25,10 +25,13 @@ public:
     void displayGrid();
     void setShips(); 
     
+    //Mutator Functions 
+    char * fillGrid(); //Fills the initial 2D array 
+    
 private:
     
     //Grid board,10x10
-    char board[10][10];
+    char * board;
     
     
 };

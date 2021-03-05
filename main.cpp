@@ -21,18 +21,33 @@ using namespace std;
 
 //Global variables 
 
+
+
 //Function prototypes 
-void displayInitalPrompt();
+void displayBanner();
+void displayInitialPrompt(string);
 
 //Execution begins 
 
 int main(int argc, char** argv) {
 
+    
+    
     //Declaration of variables 
     Grid grid1;
-    grid1.displayGrid();
+    string name = "";
+    
+    //Start of Game 
+    displayBanner(); //Displays the welcome screen/banner
 
-    system("pause");
+    //Display initial prompts and get user input
+    displayInitialPrompt(name);
+    
+    
+    grid1.displayGrid();
+    
+    
+    //system("pause");
 
 
 
@@ -42,8 +57,30 @@ int main(int argc, char** argv) {
 
 //Function definitions 
 
-void displayInitalPrompt() {
+void displayInitialPrompt(string name) {
+    
+    cout << "Enter Your Name: ";
+    cin >> name; 
+}
 
-    cout << "Welcome";
-    cout << "Enter location for ship 1 (lenght 3) e.g A3:";
+
+//****************************************************************************************************
+//                                   Display Banner                                                  *
+//****************************************************************************************************
+void displayBanner(){
+      
+      cout << "\n================================================================================================================================"
+
+           << "\n================================================================================================================================"
+
+           << "\n==                                                                                                                            =="
+
+           << "\n==                                                 WELCOM TO BATTLESHIP !                                                     =="
+
+           << "\n==                                                                                                                            =="
+
+           << "\n================================================================================================================================"
+
+           << "\n================================================================================================================================\n\n";
+    
 }
