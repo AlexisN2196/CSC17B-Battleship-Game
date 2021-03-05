@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=csc_17b_battleship_project
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/csc_17b_battleship_project
+CND_ARTIFACT_NAME_Debug=csc17b-battleship-game
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/csc17b-battleship-game
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=csc17bbattleshipproject.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/csc17bbattleshipproject.tar
+CND_PACKAGE_NAME_Debug=csc17b-battleship-game.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/csc17b-battleship-game.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=csc_17b_battleship_project
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/csc_17b_battleship_project
+CND_ARTIFACT_NAME_Release=csc17b-battleship-game
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/csc17b-battleship-game
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=csc17bbattleshipproject.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/csc17bbattleshipproject.tar
+CND_PACKAGE_NAME_Release=csc17b-battleship-game.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/csc17b-battleship-game.tar
 #
 # include compiler specific variables
 #
