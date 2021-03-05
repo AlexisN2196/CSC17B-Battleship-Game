@@ -19,7 +19,7 @@ using namespace std;
 
 Grid::Grid() {
   
-    //inialize board with 
+    //inialize board with *
     board = fillGrid();
 
 }
