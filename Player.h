@@ -11,12 +11,19 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-class Player {
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+class Player 
+{
 public:
     Player();
     Player(const Player& orig);
     virtual ~Player();
 private:
+    string name;
 
 };
 
