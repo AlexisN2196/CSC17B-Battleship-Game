@@ -22,6 +22,7 @@ public:
     Player();
     Player(const Player& orig);
     virtual ~Player();
+    void Player setName();
 private:
     string name;
 
