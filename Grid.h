@@ -17,22 +17,24 @@
 class Grid {
 public:
     //Constructors/Destructors
-    Grid();
+    Grid(int);
     Grid(const Grid& orig);
     virtual ~Grid();
     
     //Access functions
-    void displayGrid();
+    void displayBoards();
     void setShips(); 
     
     //Mutator Functions 
-    char * fillGrid(); //Fills the initial 2D array 
+    char * fillPlayersBoard(); //Fills the initial 2D array 
+    char * fillComputersBoard(int); //Creates the computers board, chooses from pre-defined boards 1 -4
     
 private:
     
     //Grid board,10x10
     char * board;
-    
+    char * computersBoard;
+
     
 };
 

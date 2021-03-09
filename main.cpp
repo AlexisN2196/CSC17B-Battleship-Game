@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
     
     
     //Declaration of variables 
-    Grid grid1;
+    Grid player(1); //The player and computer will have seperate boards, the 1 initializes the computers board 1
     string name = "";
     
     //Start of Game 
@@ -44,7 +44,8 @@ int main(int argc, char** argv) {
     displayInitialPrompt(name);
     
     
-    grid1.displayGrid();
+    player.displayBoards();
+
     
     
     //system("pause");
@@ -61,6 +62,7 @@ void displayInitialPrompt(string name) {
     
     cout << "Enter Your Name: ";
     cin >> name; 
+    cout << endl << endl << endl;
 }
 
 
