@@ -11,7 +11,9 @@
 #include "Player.h"
 
 //Constructur
-Player::Player() {
+Player::Player() 
+{
+  name = "";
 }
 
 Player::Player(const Player& orig) {
@@ -20,3 +22,7 @@ Player::Player(const Player& orig) {
 Player::~Player() {
 }
 
+void Player:: setName(string name)
+{
+  this ->name = name;
+}
