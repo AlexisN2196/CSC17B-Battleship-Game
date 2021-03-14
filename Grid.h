@@ -7,7 +7,7 @@
 /* 
  * File:   Grid.h
  * Author: thomassaldana
- *test
+ *
  * Created on March 1, 2021, 6:47 PM
  */
 
@@ -17,7 +17,7 @@
 class Grid {
 public:
     //Constructors/Destructors
-    Grid(int);
+    Grid();
     Grid(const Grid& orig);
     virtual ~Grid();
     
@@ -26,16 +26,20 @@ public:
     void setShips(); 
     
     //Mutator Functions 
-    char * fillPlayersBoard(); //Fills the initial 2D array 
     char * fillComputersBoard(int); //Creates the computers board, chooses from pre-defined boards 1 -4
+    void fillUserBoard();//allows user to set ships on their board
     
 private:
-    //testeasdasdasd
+    
     //Grid board,10x10
     char * board;
     char * computersBoard;
-
+    char * userBoard;
     
+    int row; 
+    int col; 
+    char direction;
+    char alphaCol;
 };
 
 #endif /* GRID_H */

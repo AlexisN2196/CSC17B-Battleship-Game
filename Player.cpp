@@ -4,25 +4,25 @@
  *
  * Date: February 24, 2021, 5:32 PM
  * Desc: BattleShip
- * test
+ * 
  */
 
 
 #include "Player.h"
 
-//Constructur
-Player::Player() 
-{
-  name = "";
+//Constructor
+Player::Player() {
 }
 
 Player::Player(const Player& orig) {
 }
-//Destructur
+//Destructor
 Player::~Player() {
 }
 
-void Player:: setName(string name)
-{
-  this ->name = name;
-}
+//Name
+
+//Wins
+
+//
+

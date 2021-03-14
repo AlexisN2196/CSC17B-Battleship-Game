@@ -15,10 +15,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Grid.cpp</itemPath>
-      <itemPath>Player.cpp</itemPath>
-      <itemPath>Ship.cpp</itemPath>
-      <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -42,19 +38,11 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="Grid.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="Grid.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Player.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Ship.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="Ship.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -77,19 +65,11 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="Grid.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="Grid.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Player.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Ship.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="Ship.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
