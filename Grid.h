@@ -30,7 +30,7 @@ public:
     char * fillComputersBoard(int); //Creates the computers board, chooses from pre-defined boards 1 -4
     
 private:
-    
+    //test
     //Grid board,10x10
     char * board;
     char * computersBoard;
