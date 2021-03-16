@@ -1,3 +1,5 @@
+
+
 /* 
  * File:   main.cpp
  * Author(s):Alexis N, Thomas S
@@ -18,4 +20,3 @@ Ship::Ship(const Ship& orig) {
 
 Ship::~Ship() {
 }
-

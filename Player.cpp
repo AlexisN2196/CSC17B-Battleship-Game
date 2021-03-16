@@ -10,13 +10,19 @@
 
 #include "Player.h"
 
-//Constructur
+//Constructor
 Player::Player() {
 }
 
 Player::Player(const Player& orig) {
 }
-//Destructur
+//Destructor
 Player::~Player() {
 }
+
+//Name
+
+//Wins
+
+//
 
