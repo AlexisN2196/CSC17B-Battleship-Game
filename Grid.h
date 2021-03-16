@@ -24,6 +24,7 @@ public:
     //Access functions
     void displayBoards();
     void setShips(); 
+    void displayPlayerBoard();
     
     //Mutator Functions 
     char * fillComputersBoard(int); //Creates the computers board, chooses from pre-defined boards 1 -4

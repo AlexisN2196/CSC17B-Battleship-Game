@@ -57,16 +57,16 @@ int main(int argc, char** argv) {
   
    
     
-    //Get players coordinates 
+    //Loop to get players coordinates for all  
      board.fillUserBoard();
     
      //Set computers board
     board.fillComputersBoard(computerChoice()); //Randomly fills computers board
     
-    
+    //system("clear");
     
     //board.displayBoards();
-
+   // board.displayPlayerBoard();
     
     
     //system("pause");

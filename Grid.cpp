@@ -21,7 +21,7 @@ using namespace std;
 Grid::Grid( ) {
   
     board = computersBoard = userBoard = nullptr;
-
+  
 }
 
 Grid::Grid(const Grid& orig) {
@@ -79,6 +79,8 @@ void Grid::setShips(){ //player will choose coordinates for their ship
 //Choose a board for the computer and return it
 char * Grid::fillComputersBoard(int boardNum){
         //Dimensions of 2D array
+   
+    
     int  m = 10, n = 10, c = 0; 
     
     //Create a new 2D dynamic array 
@@ -211,13 +213,43 @@ char * Grid::fillComputersBoard(int boardNum){
 
 //player sets positions for ships 
 void Grid::fillUserBoard(){
-
+  
+  char letter;
+  string name;
+  int spaces;
+  
+  cout << "\nThe computer has strategically placed it's ships. Now it's your turn.";
+  
+   for (int ships = 0; ships <4; ships++) 
+   {
+       
+         if (ships == 0)
+    {
+        letter = 'B';
+        name = "Battleship";
+        spaces = 6;
+    }
+    if (ships == 1)
+    {
+        letter = 'D';
+        name = "Destroyer";
+        spaces = 4;
+    }
+    if (ships == 2)
+    {
+        letter = 'S';
+        name = "Submarine";
+        spaces = 3;
+    }
+    if (ships == 3)
+    {
+        letter ='P';
+        name = "Patrol Boat";
+        spaces = 2;
+    }
     
-    
-    
-    cout << "\nThe computer has strategically placed it's ships. Now it's your turn.";
-    cout << "\nYou will choose a starting coordinate for each boat, then decide if the boat will be placed horizontally (to the right) or vertically (starting at the top) from that point";
-    cout << "\n\nLets start with the largest boat, your Battleship. It takes up 6 spaces. Where would you like to place it?";
+    cout << "\nChoose a starting coordinate for each of your boats, then decide if the boat will be placed horizontally (to the right) or vertically (starting at the top) from that point";
+    cout << "\n\nYour " << name << " takes up " <<spaces << " spaces.";
     cout << "\nEnter a number coordinate (1-10)";
     cin >> row;
     row --;
@@ -227,6 +259,7 @@ void Grid::fillUserBoard(){
     cout <<"Will this ship be placed horizontally or vertically? (H or V)";
     cin >> direction;
     putchar (toupper (direction));
+    
     
     if (alphaCol == 'A')
         col = 0;
@@ -252,45 +285,91 @@ void Grid::fillUserBoard(){
     cout << "column: " << col << "\n";
     cout << "row: " << row << "\n";
 
-    int  m = 10, n = 10, c = 0; 
-    
-    //Create a new 2D dynamic array 
-    char * arr = new char[ m * n ];
-    
-    //Fill 2D array(Grid)
-    for( int i = 0; i < m ; i++ ){
-        
-        for( int j = 0; j < n; j++ ){
-            
-            //Assign values to the array with * 
-            *(arr + i * 10 + j) = '.';
-        }
-    }
-    
+    cout << "TEST 1\n";
+  
     if (direction = 'H')
     {
         
-        *(arr + row * 10 + col) = 'B';
-        *(arr + row * 10 + (col + 1)) = 'B';
-        *(arr + row * 10 + (col + 2)) = 'B';
-        *(arr + row * 10 + (col + 3)) = 'B';
-        *(arr + row * 10 + (col +4 )) = 'B';
-        *(arr + row * 10 + (col + 5)) = 'B';       
-        
+        *(userBoard + row * 10 + col) = letter;
+        *(userBoard + row * 10 + (col + 1)) = letter;
+        *(userBoard + row * 10 + (col + 2)) = letter;
+        *(userBoard + row * 10 + (col + 3)) = letter;
+        *(userBoard + row * 10 + (col +4 )) = letter;
+        *(userBoard + row * 10 + (col + 5)) = letter;
+        cout << "TEST 2\n";
     }
     else if (direction = 'V')
     {
         
-        *(arr + row * 10 + col) = 'B';
-        *(arr + (row +1) * 10 + col) = 'B';
-        *(arr + (row +2) * 10 + col) = 'B';
-        *(arr + (row +3)* 10 + col) = 'B';
-        *(arr + (row +4)* 10 + col) = 'B';
-        *(arr + (row +5)* 10 + col) = 'B';       
+        *(userBoard + row * 10 + col) = letter;
+        *(userBoard + (row +1) * 10 + col) = letter;
+        *(userBoard + (row +2) * 10 + col) = letter;
+        *(userBoard + (row +3)* 10 + col) = letter;
+        *(userBoard + (row +4)* 10 + col) = letter;
+        *(userBoard + (row +5)* 10 + col) = letter;    
         
     }
-    
-    
-  board = arr; 
-    
+cout << "TEST 3\n";
+         //userBoard = arr; 
+  	cout <<"   \t    " << setw(4) << left    << 'A' << setw(4) << 'B' << setw(4) << 'C' << setw(4) << 'D' << setw(4) << 'E' << setw(4) << 'F' 
+             << setw(4)   << 'G'     << setw(4) << 'H' << setw(4) << 'I' << setw(4) << 'J' //End players board
+             <<"   \t    " << setw(4) << left    << 'A' << setw(4) << 'B' << setw(4) << 'C' << setw(4) << 'D' << setw(4) << 'E' << setw(4) << 'F' 
+             << setw(4)   << 'G'     << setw(4) << 'H' << setw(4) << 'I' << setw(4) << 'J' << endl; //End players board
+        
+        cout <<"   \t   " << "======================================" <<"   \t   " << "======================================\n" ;
+    for (int row = 0; row < 10; row++)
+    {
+        //Players board
+        cout << "\t" << setw(1) << left << row + 1 << " | " ;
+        for (int col = 0; col < 10; col++)
+	{
+            cout << setw(4) << left << *(userBoard + row * 10 + col);
+                        
+	}
+   cout << "TEST 4\n";
+     //Computers board
+    cout << "\t" << setw(1) << left << row + 1 << " | " ;
+    for (int col = 0; col < 10; col++)
+    {
+        cout << setw(4) << left << "*" ;//*(computersBoard + row * 10 + col)
+                        
+    }
+               
+    cout << endl << endl;
+                
+   }
+        cout << "\n\n\t\t\t   " << "PLAYER:    " << "\t\t\t\t\t" << "COMPUTER\n"; 
+	cout << endl;
+  
+  
+  
+   }   
+}
+
+void Grid::displayPlayerBoard()
+{
+   for (int row = 0; row < 10; row++)
+    {
+        //Players board
+        cout << "\t" << setw(1) << left << row + 1 << " | " ;
+        for (int col = 0; col < 10; col++)
+	{
+            cout << setw(4) << left << *(userBoard + row * 10 + col);
+                        
+	}
+   
+   
+     //Computers board
+    cout << "\t" << setw(1) << left << row + 1 << " | " ;
+    for (int col = 0; col < 10; col++)
+    {
+        cout << setw(4) << left << "*" ;//*(computersBoard + row * 10 + col)
+                        
+    }
+               
+    cout << endl << endl;
+                
+   }
+        cout << "\n\n\t\t\t   " << "PLAYER:    " << "\t\t\t\t\t" << "COMPUTER\n"; 
+	cout << endl;
 }
