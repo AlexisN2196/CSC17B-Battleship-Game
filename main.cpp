@@ -63,8 +63,6 @@ int main(int argc, char** argv) {
      //Fill the users board with his/her input
      board.fillUsersBoard();
     
-     //Set computers board
-    board.fillComputersBoard(computerChoice()); //Randomly fills computers board
     
     //system("clear");
     
