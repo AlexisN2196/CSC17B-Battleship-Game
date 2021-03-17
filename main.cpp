@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
     
     
     //Declaration of variables 
-    Grid board; //The player and computer will have separate boards, the 1 initializes the computers board 1
+    Grid board(computerChoice()); //The player and computer will have separate boards, the 1 initializes the computers board 1
     int row, col;
     char direction;
     
@@ -58,7 +58,10 @@ int main(int argc, char** argv) {
    
     
     //Loop to get players coordinates for all  
-     board.fillUserBoard();
+     board.createUsersBoard();
+     
+     //Fill the users board with his/her input
+     board.fillUsersBoard();
     
      //Set computers board
     board.fillComputersBoard(computerChoice()); //Randomly fills computers board
