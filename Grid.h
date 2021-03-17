@@ -10,14 +10,13 @@
  *
  * Created on March 1, 2021, 6:47 PM
  */
-
 #ifndef GRID_H
 #define GRID_H
 
 class Grid {
 public:
     //Constructors/Destructors
-    Grid();
+    Grid(int);
     Grid(const Grid& orig);
     virtual ~Grid();
     
@@ -28,7 +27,9 @@ public:
     
     //Mutator Functions 
     char * fillComputersBoard(int); //Creates the computers board, chooses from pre-defined boards 1 -4
-    void fillUserBoard();//allows user to set ships on their board
+    char * createUsersBoard();//allows user to set ships on their board
+    void fillUsersBoard(); 
+    
     
 private:
     
