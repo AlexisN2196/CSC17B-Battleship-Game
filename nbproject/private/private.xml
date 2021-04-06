@@ -6,6 +6,14 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/thomassaldana/Desktop/RCC/CSC-17B/CSE-BattleShip/main.cpp</file>
+            <file>file:/Users/thomassaldana/Desktop/RCC/CSC-17B/CSE-BattleShip/Player.cpp</file>
+            <file>file:/Users/thomassaldana/Desktop/RCC/CSC-17B/CSE-BattleShip/Ship.cpp</file>
+            <file>file:/Users/thomassaldana/Desktop/RCC/CSC-17B/CSE-BattleShip/Board.h</file>
+            <file>file:/Users/thomassaldana/Desktop/RCC/CSC-17B/CSE-BattleShip/Player.h</file>
+            <file>file:/Users/thomassaldana/Desktop/RCC/CSC-17B/CSE-BattleShip/Board.cpp</file>
+            <file>file:/Users/thomassaldana/Desktop/RCC/CSC-17B/CSE-BattleShip/Ship.h</file>
+        </group>
     </open-files>
 </project-private>

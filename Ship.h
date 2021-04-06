@@ -6,17 +6,13 @@
 
 /* 
  * File:   Ship.h
- * Author: Family
+ * Author: thomassaldana
  *
- * Created on March 2, 2021, 9:29 PM
+ * Created on March 16, 2021, 7:07 PM
  */
 
 #ifndef SHIP_H
 #define SHIP_H
-
-#include <iostream>
-
-using namespace std; 
 
 class Ship {
 public:
@@ -24,12 +20,8 @@ public:
     Ship(const Ship& orig);
     virtual ~Ship();
 private:
-    string type; //Ship Type
-    int length; //Ship Length
 
 };
-
-
 
 #endif /* SHIP_H */
 

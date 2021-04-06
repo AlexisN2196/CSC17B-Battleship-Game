@@ -6,15 +6,16 @@
 
 /* 
  * File:   Player.h
- * Author: Family
+ * Author: thomassaldana
  *
- * Created on March 2, 2021, 9:29 PM
+ * Created on March 16, 2021, 7:07 PM
  */
 
+#include <iostream>
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <iostream>
-using namespace std;
+
+using namespace std; 
 
 class Player {
 public:
@@ -22,11 +23,14 @@ public:
     Player(const Player& orig);
     virtual ~Player();
     
-  
+    //Mutator Functions 
+    void setName(); 
+    
+    //Access Functions
+    string getName(); 
+    
 private:
-    string name;
-    string score; 
-
+    string name; 
 };
 
 #endif /* PLAYER_H */

@@ -3,9 +3,9 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>CSC_17B_BattleShip_Project</name>
+            <name>CSE-BattleShip</name>
             <c-extensions/>
-            <cpp-extensions/>
+            <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
