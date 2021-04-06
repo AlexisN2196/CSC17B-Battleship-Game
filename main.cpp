@@ -32,9 +32,6 @@ int computerChoice();
 
 int main(int argc, char** argv) {
     
-    
-
-    int na;
     //Declaration of variables 
     //The player and computer will have separate boards
     //The computers board will be chosen randomly and different every game
