@@ -22,17 +22,3 @@ Player::Player(const Player& orig) {
 Player::~Player() {
 }
 
-//Mutator Functions
-void Player::setName(){
-    
-    cout << "\n\nFirst, enter your name: ";
-    cin >> name; 
-
-}
-
-//Access Functions
-string Player::getName(){ 
-    
-    return name; 
-
-}

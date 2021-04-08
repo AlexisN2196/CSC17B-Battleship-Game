@@ -11,26 +11,16 @@
  * Created on March 16, 2021, 7:07 PM
  */
 
-#include <iostream>
 #ifndef PLAYER_H
 #define PLAYER_H
-
-using namespace std; 
 
 class Player {
 public:
     Player();
     Player(const Player& orig);
     virtual ~Player();
-    
-    //Mutator Functions 
-    void setName(); 
-    
-    //Access Functions
-    string getName(); 
-    
 private:
-    string name; 
+
 };
 
 #endif /* PLAYER_H */
