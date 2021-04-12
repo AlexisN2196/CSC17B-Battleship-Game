@@ -6,7 +6,7 @@
 
 /* 
  * File:   Board.h
- * Author: thomassaldana
+ * Author: Alexis N, Thomas S
  *
  * Created on March 1, 2021, 6:47 PM
  */
@@ -28,15 +28,20 @@ public:
     void displayBoards(Player &, Board &);
     void setShips(); 
     void attack(Player &, Board &); //Use to attack opponents board
+    void computerAttack(Player &player, Board &player1); //use to attack player's board
     void setAttackCoordinate(); //will store users attack coordinate
     bool isHit(); //determines if a coordinate is a hit or miss 
     string getAttackCoordinate(); // will return attack coordinate
     int getShipsDestroyedCount();
-    
+    int getComputerShipsDestroyedCount();
+    int getPlayerShipsDestroyedCount();
+    bool didComputerHit(); //returns true if coordinate was a hit
+    void displayBanner( );
+            
     //Mutator Functions 
     char ** fillBoard(int); //Creates the computers board, chooses from pre-defined boards 1 -4
     void increaseShipsDestroyedCount(); 
-    
+    void increasePlayerShipsDestroyedCount();
     
     
     
@@ -54,7 +59,8 @@ private:
     //Variables used to attack ship
     string attackCoordinate; 
     int shipsDestroyed;
+    int shipsDestroyedComp;
+    bool  firstDisplay;
 };
 
 #endif /* GRID_H */
-
