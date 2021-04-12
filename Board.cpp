@@ -21,8 +21,7 @@ using namespace std;
 
 //Players Board 
 Board::Board( int boardNum) {
-    
-    boardNum = 2; //ERASE AFTER TESTING
+
     board = fillBoard(boardNum);
     shipsDestroyed = 0;
 
@@ -60,7 +59,13 @@ void Board::displayBoards(Player &player, Board &player1){
                 cout << "\t" << setw(1) << left << row + 1 << " | " ;
                 for (int col = 0; col < 10; col++)
 		{
-			cout << setw(4) << left << board[row][col] ;//*(computersBoard + row * 10 + col)
+                  //If coordinate is a hit, display it,  else  keep battleship loc hidden
+                  if (!(board[row][col] == '~' || board[row][col] == 'X')){
+                      cout << setw(4) << left << '.';
+                  } else {
+                      cout << setw(4) << left << board[row][col];
+                  }
+                                            
                         
 		}
                 
@@ -129,11 +134,11 @@ char ** Board::fillBoard(int boardNum){
         
     }
     
-    if(boardNum == 2)
+        if(boardNum == 2)
     {
         //Set P boat, length 2
-        arr[9][8] = 'P';
-        arr[9][9] = 'P';
+        arr[8][7] = 'P';
+        arr[8][8] = 'P';
         
          //Set S boat, length 3
         arr[1][1] = 'S';
@@ -141,85 +146,240 @@ char ** Board::fillBoard(int boardNum){
         arr[1][3] = 'S';
         
         //Set D boat, length 4
-        arr[5][0] = 'D';
-        arr[6][0] = 'D';
-        arr[7][0] = 'D';
-        arr[8][0] = 'D';
+        arr[5][1] = 'D';
+        arr[6][1] = 'D';
+        arr[7][1] = 'D';
+        arr[8][1] = 'D';
         
         
         //Set B boat, length 6        
-        arr[0][9] = 'B';
-        arr[1][9] = 'B';
-        arr[2][9] = 'B';
-        arr[3][9] = 'B';
-        arr[4][9] = 'B';
-        arr[5][9] = 'B';
-//                
-    }
-    /*
-    if(boardNum == 3)
-    {
-        //Set P boat, length 2
-        *(arr + 4 * 10 + 5) = 'P';
-        *(arr + 5 * 10 + 5) = 'P';
-        
-         //Set S boat, length 3
-        *(arr + 1 * 10 + 7) = 'S';
-        *(arr + 1 * 10 + 8) = 'S';
-        *(arr + 1 * 10 + 9) = 'S';
-        
-        //Set D boat, length 4
-        *(arr + 5 * 10 + 0) = 'D';
-        *(arr + 6 * 10 + 0) = 'D';
-        *(arr + 7 * 10 + 0) = 'D';
-        *(arr + 8 * 10 + 0) = 'D';
-        
-        //Set B boat, length 6        
-        *(arr + 2 * 10 + 8) = 'B';
-        *(arr + 3 * 10 + 8) = 'B';
-        *(arr + 4 * 10 + 8) = 'B';
-        *(arr + 5 * 10 + 8) = 'B';
-        *(arr + 6 * 10 + 8) = 'B';
-        *(arr + 7 * 10 + 8) = 'B';
+        arr[1][8] = 'B';
+        arr[2][8] = 'B';
+        arr[3][8] = 'B';
+        arr[4][8] = 'B';
+        arr[5][8] = 'B';
+        arr[6][8] = 'B';
 //                
     }
     
+    if(boardNum == 3)
+    {
+        //Set P boat, length 2
+        arr[4][5] = 'P';
+        arr[5][5] = 'P';
+       
+        
+         //Set S boat, length 3
+        arr[1][6] = 'S';
+        arr[1][7] = 'S';
+        arr[1][8] = 'S';
+        
+        //Set D boat, length 4
+        arr[5][1] = 'D';
+        arr[6][1] = 'D';
+        arr[7][1] = 'D';
+        arr[8][1] = 'D';
+        
+        //Set B boat, length 6        
+        arr[3][8] = 'B';
+        arr[4][8] = 'B';
+        arr[5][8] = 'B';
+        arr[6][8] = 'B';
+        arr[7][8] = 'B';
+        arr[8][8] = 'B';
+//                
+    }
+ 
     if(boardNum == 4)
     {
         //Set P boat, length 2
-        *(arr + 8 * 10 + 7) = 'P';
-        *(arr + 8 * 10 + 8) = 'P';
+        arr[8][7] = 'P';
+        arr[8][8] = 'P';
         
          //Set S boat, length 3
-        *(arr + 5 * 10 + 2) = 'S';
-        *(arr + 6 * 10 + 2) = 'S';
-        *(arr + 7 * 10 + 2) = 'S';
+        arr[5][1] = 'S';
+        arr[6][1] = 'S';
+        arr[7][1] = 'S';
         
         //Set D boat, length 4
-        *(arr + 2 * 10 + 6) = 'D';
-        *(arr + 2 * 10 + 7) = 'D';
-        *(arr + 2 * 10 + 8) = 'D';
-        *(arr + 2 * 10 + 9) = 'D';
+        arr[2][5] = 'D';
+        arr[2][6] = 'D';
+        arr[2][7] = 'D';
+        arr[2][8] = 'D';
         
         //Set B boat, length 6        
-        *(arr + 0 * 10 + 3) = 'B';
-        *(arr + 1 * 10 + 3) = 'B';
-        *(arr + 2 * 10 + 3) = 'B';
-        *(arr + 3 * 10 + 3) = 'B';
-        *(arr + 4 * 10 + 3) = 'B';
-        *(arr + 5 * 10 + 3) = 'B';
+        arr[1][3] = 'B';
+        arr[2][3] = 'B';
+        arr[3][3] = 'B';
+        arr[4][3] = 'B';
+        arr[5][3] = 'B';
+        arr[6][3] = 'B';
 //                
     }
-     */
-  
-    //REMEMBER TO DELETE DYNAMIC Memory!!
+    if(boardNum == 5)
+    {
+        //Set P boat, length 2
+        arr[3][7] = 'P';
+        arr[4][7] = 'P';
+        
+         //Set S boat, length 3
+        arr[5][2] = 'S';
+        arr[5][3] = 'S';
+        arr[5][4] = 'S';
+        
+        //Set D boat, length 4
+        arr[3][2] = 'D';
+        arr[3][3] = 'D';
+        arr[3][4] = 'D';
+        arr[3][5] = 'D';
+        
+        //Set B boat, length 6        
+        arr[7][1] = 'B';
+        arr[7][2] = 'B';
+        arr[7][3] = 'B';
+        arr[7][4] = 'B';
+        arr[7][5] = 'B';
+        arr[7][6] = 'B';
+//                
+    }
+    
+    if(boardNum == 6)
+    {
+        //Set P boat, length 2
+        arr[1][4] = 'P';
+        arr[1][5] = 'P';
+        
+         //Set S boat, length 3
+        arr[3][7] = 'S';
+        arr[4][7] = 'S';
+        arr[5][7] = 'S';
+        
+        //Set D boat, length 4
+        arr[3][2] = 'D';
+        arr[4][2] = 'D';
+        arr[5][2] = 'D';
+        arr[6][2] = 'D';
+        
+        //Set B boat, length 6        
+        arr[8][2] = 'B';
+        arr[8][3] = 'B';
+        arr[8][4] = 'B';
+        arr[8][5] = 'B';
+        arr[8][6] = 'B';
+        arr[8][7] = 'B';
+//                
+    }
+    
+    if(boardNum == 7)
+    {
+        //Set P boat, length 2
+        arr[4][5] = 'P';
+        arr[5][5] = 'P';
+        
+         //Set S boat, length 3
+        arr[2][1] = 'S';
+        arr[3][1] = 'S';
+        arr[4][1] = 'S';
+        
+        //Set D boat, length 4
+        arr[1][5] = 'D';
+        arr[1][6] = 'D';
+        arr[1][7] = 'D';
+        arr[1][8] = 'D';
+        
+        //Set B boat, length 6        
+        arr[3][8] = 'B';
+        arr[4][8] = 'B';
+        arr[5][8] = 'B';
+        arr[6][8] = 'B';
+        arr[7][8] = 'B';
+        arr[8][8] = 'B';               
+    }
+    
+    if(boardNum == 8)
+    {
+        //Set P boat, length 2
+        arr[1][7] = 'P';
+        arr[1][8] = 'P';
+        
+         //Set S boat, length 3
+        arr[8][5] = 'S';
+        arr[8][6] = 'S';
+        arr[8][7] = 'S';
+        
+        //Set D boat, length 4
+        arr[5][3] = 'D';
+        arr[6][3] = 'D';
+        arr[7][3] = 'D';
+        arr[8][3] = 'D';
+        
+        //Set B boat, length 6        
+        arr[3][1] = 'B';
+        arr[3][2] = 'B';
+        arr[3][3] = 'B';
+        arr[3][4] = 'B';
+        arr[3][5] = 'B';
+        arr[3][6] = 'B';               
+    }
+    
+        if(boardNum == 9)
+    {
+        //Set P boat, length 2
+        arr[7][4] = 'P';
+        arr[7][5] = 'P';
+        
+         //Set S boat, length 3
+        arr[2][4] = 'S';
+        arr[2][5] = 'S';
+        arr[2][6] = 'S';
+        
+        //Set D boat, length 4
+        arr[5][1] = 'D';
+        arr[5][2] = 'D';
+        arr[5][3] = 'D';
+        arr[5][4] = 'D';
+        
+        //Set B boat, length 6        
+        arr[2][8] = 'B';
+        arr[3][8] = 'B';
+        arr[4][8] = 'B';
+        arr[5][8] = 'B';
+        arr[6][8] = 'B';
+        arr[7][8] = 'B';              
+    }
+    
+    if(boardNum == 10)
+    {
+        //Set P boat, length 2
+        arr[1][7] = 'P';
+        arr[1][8] = 'P';
+        
+         //Set S boat, length 3
+        arr[3][5] = 'S';
+        arr[3][6] = 'S';
+        arr[3][7] = 'S';
+        
+        //Set D boat, length 4
+        arr[5][3] = 'D';
+        arr[5][4] = 'D';
+        arr[5][5] = 'D';
+        arr[5][6] = 'D';
+        
+        //Set B boat, length 6        
+        arr[8][1] = 'B';
+        arr[8][2] = 'B';
+        arr[8][3] = 'B';
+        arr[8][4] = 'B';
+        arr[8][5] = 'B';
+        arr[8][6] = 'B';               
+    }
     return arr;
 }
 
 
 void Board::attack(Player &player, Board &player1){
         
-        string st;
+        
         
         setAttackCoordinate();
         
@@ -231,7 +391,7 @@ void Board::attack(Player &player, Board &player1){
         
         } else { 
             displayBoards(player, player1);
-            cout << "MISS!!\n\n";
+            cout << "YOU MISS!!\n\n";
         }
 
     
@@ -241,6 +401,9 @@ void Board::setAttackCoordinate(){
 
     cout << "Enter Attack Coordinate (e.g 1A or 1a): ";
     cin >> attackCoordinate; //e.g 1c
+    system("clear");
+    displayBanner();
+    
     cout << endl; 
     
 }
@@ -295,3 +458,91 @@ void Board::increaseShipsDestroyedCount(){
  int Board::getShipsDestroyedCount(){
      return shipsDestroyed; 
  }
+ 
+ //==============================computer attacks player=======================================================
+
+ void Board::computerAttack(Player &player1, Board &playersBoard){
+        
+        
+       // setAttackCoordinate();
+        if( didComputerHit() ) { //if coordinate is hit, return true 
+
+            cout << "COMPUTER HIT YOUR BOAT!\n\n";
+            increasePlayerShipsDestroyedCount();
+        
+        } else { 
+
+            cout << "COMPUTER MISSES!!\n\n";
+        }
+
+    
+}//END attack()
+ 
+bool Board::didComputerHit() {
+    
+    int min = 0;
+    int max = 9;
+    int seed = time(0);
+    
+    srand(seed);
+    
+    int col = min + (rand() % (max - min +1));
+    int row = min + (rand() % (max - min +1));
+
+   
+    //If computer misses, mark coordinate with  ~, for miss
+    if( board[row][col] == '.'){
+
+        board[row][col] = '~';
+        
+        return false;
+        
+    //If player hits, mark coordinate with X, for hit
+    }else {
+        
+        //Change 'Letter' to 'X', to let user know he hit the boat
+        board[row - 1][col] = 'X';
+        
+        return true;
+    }
+  
+}
+
+void Board::increasePlayerShipsDestroyedCount(){
+    ++shipsDestroyedComp;
+}
+ int Board::getPlayerShipsDestroyedCount(){
+     return shipsDestroyedComp; 
+ }
+ 
+//****************************************************************************************************
+//                                   Display Banner                                                  *
+//****************************************************************************************************
+void Board::displayBanner( ){
+      
+      cout << "\n================================================================================================================================"
+
+           << "\n================================================================================================================================"
+
+           << "\n==                                                                                                                            =="
+
+           << "\n==                                                      BATTLESHIP !                                                    =="
+
+           << "\n==                                                                                                                            =="
+
+           << "\n================================================================================================================================"
+
+           << "\n================================================================================================================================\n\n";
+       
+      if(firstDisplay) {
+          
+          cout << "\nA game where you will race to see who can find and sink their opponents ships first. "
+           <<  "\nYou will be playing against the computer and each start with 4 boats.";
+          cout << endl << endl;
+          firstDisplay = false; 
+          
+      }
+      firstDisplay = false;
+      
+    
+}
