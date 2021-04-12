@@ -6,7 +6,7 @@
 
 /* 
  * File:   Board.cpp
- * Author: thomassaldana
+ * Author: Alexi N, Thomas S
  * 
  * Created on March 1, 2021, 6:47 PM
  */
